@@ -1,0 +1,64 @@
+---
+
+const {nombre, descripcion, image} = Astro.props
+
+---
+
+<div class="miproducto">
+    <img class="image" src={image} alt={nombre}>
+        <h2 class="title">
+             {nombre}
+        </h2>
+        <p class="descripcion">{descripcion}</p>
+    
+</div>
+
+<style>
+
+.miproducto{
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "image title"
+    "image descripcion";
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.miproducto > img{
+    width: 150px;
+    height: 150px;
+}
+
+.miproducto__info{
+    width: 100%;
+}
+
+.image{
+        grid-area: image;
+    }
+    .title{
+        grid-area: title;
+    }
+    .descripcion{
+        grid-area: descripcion;
+        margin: 25px;
+    }
+
+@media (max-width: 800px){
+    .miproducto{
+        display: grid;
+        grid-template-areas: 
+        "image title"
+        "descripcion descripcion";
+        
+    }
+    
+}
+
+
+
+</style>
+
+

@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Productos from '../components/Productos.astro';
+import Formulario from '../components/Formulario.astro';
+import Ubicacion from '../components/Ubicacion.astro'
+---
+
+<Layout title="Café Oslo">
+	<main>
+		<Header />
+
+		<section id="servicios" class="servicios">
+
+			<article class="servicios__oslo background1">
+
+				<div class="oslo__title">
+					<h1>VEN AL BRUNCH</h1><h1>DE LOS DOMINGOS</h1>
+				</div>
+
+				<p>Sesame snaps icing chocolate bar. I love donut powder sesame snaps. Jelly-o topping caramels. Sugar plum I love gummi bears.</p>
+
+			</article>
+
+			<article class="servicios__oslo background2">
+				<div class="oslo__title">
+					<h1>CELEBRA TUS FIESTAS</h1><h1>CON NOSOSTROS</h1>
+				</div>
+				<p>Bonbon sweet bonbon jelly beans jelly-o I love lollipop. Cookie sesame snaps bear claw. Cake dragée danish. Powder I love liquorice macaroon.</p>
+			</article>
+
+		</section>
+
+		<section class="productos">
+			<h1>VEN A DESAYUNAR</h1>
+			<p>Bonbon topping I love sweet roll I love candy icing chocolate jelly. Pie soufflé sweet. Apple pie bonbon caramels powder.</p>
+			<button class="productos__btn">
+				DESCUBRE NUESTROS PRODUCTOS
+			</button>
+
+		</section>
+		<Productos />
+
+		<section id="contacto" class="contact">
+			<Formulario/>
+			<Ubicacion />
+		</section>
+
+		<footer class="footer">
+			<p>Café Oslo. 2024.</p>
+		</footer>
+
+	</main>
+	
+</Layout>
+
+<style>
+	main {
+		width: 100%;
+		color: black;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+
+	.servicios{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.servicios__oslo{
+		flex: 1 1 50%;
+		padding: 40px;
+		text-align: center;
+	}
+
+	.servicios__oslo:first-child{
+		background-color: #D03B40;
+		color: #DED6C0;
+	}
+
+	.servicios__oslo:last-child{
+		background-color: #DED6C0;
+		color: #D03B40;
+	}
+
+	.productos{
+		min-height: 50vh;
+		width: 100%;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		background-image: url(../../public/Fondo2.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.productos__btn{
+		cursor: pointer;
+		padding: 10px;
+		margin-top: 20px;
+		border: 2px solid white;
+		font-family: system-ui, sans-serif;
+		border-radius: 10px;
+		font-weight: bold;
+		color: white;
+		background-color:transparent;
+		transition: all .3s ease;
+	}
+
+	.productos__btn:hover{
+		background-color:#D03B40;
+	}
+
+	.contact{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.footer{
+		width: 100%;
+		height: 100px;
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		background-color: #3C3C3B;
+		color: white;
+		padding: 50px;
+		
+	}
+
+	@media (max-width: 800px){
+		.contact{
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	
+</style>

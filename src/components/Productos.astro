@@ -1,0 +1,45 @@
+---
+import ProductCard from "./ProductCard.astro"
+import {productos} from "../products/productos.js"
+
+console.log(productos)
+
+---
+
+<section id="productos" class="productos">
+
+    {
+        productos.map(producto => (
+            
+            <ProductCard key={producto.id}
+                         nombre={producto.nombre}
+                         descripcion={producto.descripcion}
+                         image={producto.image} />                    
+        ))
+    }
+
+</section>
+
+<style>
+
+    .productos{
+        width: 100%;
+        min-height: 70vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #F5F0ED;
+        align-items: start;
+        padding: 20px;
+    }
+
+    @media (max-width: 800px){
+        .productos{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+</style>
+
+
+

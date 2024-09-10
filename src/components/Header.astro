@@ -1,0 +1,154 @@
+---
+
+---
+
+<header id="header" class="header">
+
+    <button class="header__btn">
+          
+    </button>
+
+    <section class="header__menu">
+        <img src="../../public/Logo.png" alt="Logo Café Oslo">
+        <nav class="menu__nav">
+            <a href="#productos">Productos</a>
+            <a href="#servicios">Servicios</a>
+            <a href="">Reservas</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </section>
+
+    <section class="header__info">
+
+        <div class="info__title">
+            <h1>RECIÉN HECHO,</h1><h1>TODOS LOS DÍAS.</h1>
+        </div>
+
+        <div class="info__text">
+            Chocolate cake chocolate cake pie candy canes chocolate cake bonbon. I love marzipan liquorice I love cake chupa chups. Pie danish macaroon ice cream ice cream. Bonbon sweet bonbon jelly beans jelly-o I love lollipop.
+        </div>
+
+    </section>
+
+</header>
+
+<script>
+    const menu = document.querySelector(".menu__nav")
+   const btn = document.querySelector(".header__btn")
+   btn.addEventListener("click", () => {
+        menu.classList.toggle("show")
+        btn.classList.toggle("btn__menuExit")
+   })
+</script>
+
+<style>
+
+    .header__btn{
+        display: none;
+    }
+
+    .header{
+        width: 100%;
+        min-height: 80vh;
+        background-image: url(../../public/Fondo1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__menu{
+        width: 90%;
+        margin-top: 30px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .menu__nav{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .menu__nav > a{
+        color: white;
+        text-decoration: none;
+        transition: all .3s ease;
+    }
+
+    .menu__nav > a:hover{
+        transform: scale(1.2);
+    }
+
+    .header__info{
+        width: 60%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15rem;
+    }
+
+    @media (max-width: 800px){
+        .header__btn{
+            cursor: pointer;
+            position: fixed;
+            top: 40px;
+            left: 20px;
+            display: flex;
+            width: 35px;
+            height: 35px;
+            justify-content: center;
+            align-items: center;
+            background-image: url(../../public/menu.png);
+            background-repeat: no-repeat;
+            background-size:contain;
+            border: none;
+        }        
+        .header{
+            gap: 30px;
+        }
+        .header__menu{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu__nav{
+            position: fixed;
+            width: 100%;
+            background-color: #DED6C0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0px;
+            transform: translateY(-150%);
+            transition: all .4s ease
+
+        }
+
+        .menu__nav > a{
+            border-bottom: 2px solid #D03B40;
+            width: 100%;
+            color: black;
+            text-align: center;
+            padding: 10px;
+        }
+        .show{
+            transform: translateY(20%);
+            
+        }
+        .btn__menuExit{
+            background-image: url(../../public/x.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+</style>
