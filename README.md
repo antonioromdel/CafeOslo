@@ -1,3 +1,6 @@
+* Falta la carpeta node_modules de astro.
+* Para visualizar la web desplegada, puedes visitar el siguiente enlace: https://cafebaroslo.netlify.app/
+
 # Astro Starter Kit: Basics
 
 ```sh
